@@ -33,12 +33,21 @@
 <div class="row">
     <h2 style="padding-left: 15Px">Stocks Information</h2>
 </div>
+
 <div>
     <table class="table table-striped table-bordered table-hover">
         <thead>
         <tr class="bg-info">
 
             <th>Cust ID</th>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Initial Stock Price </th>
+            <th>Initial Stock Value </th>
+            <th>Purchase Date</th>
+            <th>Current Stock Price</th>
+            <th>Current Stock value</th>
 
         </tr>
         </thead>
@@ -46,12 +55,93 @@
         {% for stock in stocks %}
             <tr>
                 <td>{{ stock.customer }}</td>
+                <td>{{ stock.symbol }}</td>
+                <td>{{ stock.name }}</td>
+                <td>{{ stock.shares}}</td>
 
+                <td>{{ stock.purchase_price }}</td>
+                 <td>{{ stock.purchase_date}}</td>
 
             </tr>
+
         {% endfor %}
         </tbody>
     </table>
+
 </div>
+
+
+
+<div class="row">
+    <h2 style="padding-left: 15Px">Investment Information</h2>
+</div>
+
+<div>
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr class="bg-info">
+
+            <th>Cust ID</th>
+            <th>Catagory</th>
+            <th>Description </th>
+            <th>Acquired_value</th>
+            <th>Acquired_date</th>
+            <th>Recent_value</th>
+            <th>Recent_date</th>
+            <th>Result</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for investment in investments %}
+            <tr>
+                <td>{{ investment.customer }}</td>
+                <td>{{ investment.category }}</td>
+                 <td>{{ investment.description }}</td>
+                <td>{{ investment.acquired_value}}</td>
+                <td>{{ investment.acquired_date}}</td>
+                <td>{{ investment.recent_value}}</td>
+                <td>{{ investment.recent_date}}</td>
+                <td>{{ investment.recent_value|sub:investment.acquired_value}}</td>
+
+
+
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+<div>
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr class="bg-info">
+
+            <th>Total intial investmenty</th>
+            <th>Total curent inestment </th>
+            <th>Result</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for investment in investments %}
+            <tr>
+                {% with R=investment.recent_value|sub:investment.acquired_value%}
+                    <td> {{ R}}</td>
+                {% endwith %}
+
+
+
+            </tr>
+
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
 
 
