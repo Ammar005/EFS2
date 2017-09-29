@@ -47,7 +47,7 @@
             <th>Initial Stock Value </th>
             <th>Purchase Date</th>
             <th>Current Stock Price</th>
-            <th>Current Stock value</th>
+            <th>Current Stock Value</th>
 
         </tr>
         </thead>
@@ -58,9 +58,12 @@
                 <td>{{ stock.symbol }}</td>
                 <td>{{ stock.name }}</td>
                 <td>{{ stock.shares}}</td>
+                <td>{{ stock.initial_stock_price }}</td>
+                <td>{{ stock.initial_stock_value }}</td>
+                <td>{{ stock.purchase_date}}</td>
+                <td>{{ stock.current_stock_price }}</td>
+                <td>{{ stock.current_stock_value }}</td>
 
-                <td>{{ stock.purchase_price }}</td>
-                 <td>{{ stock.purchase_date}}</td>
 
             </tr>
 
@@ -98,12 +101,12 @@
             <tr>
                 <td>{{ investment.customer }}</td>
                 <td>{{ investment.category }}</td>
-                 <td>{{ investment.description }}</td>
+                <td>{{ investment.description }}</td>
                 <td>{{ investment.acquired_value}}</td>
                 <td>{{ investment.acquired_date}}</td>
                 <td>{{ investment.recent_value}}</td>
                 <td>{{ investment.recent_date}}</td>
-                <td>{{ investment.recent_value|sub:investment.acquired_value}}</td>
+                <td>{{ investment.results_by_investment}}</td>
 
 
 
@@ -120,24 +123,20 @@
         <thead>
         <tr class="bg-info">
 
-            <th>Total intial investmenty</th>
-            <th>Total curent inestment </th>
+            <th>Total Initial investmenty</th>
+            <th>Total Curent inestment </th>
             <th>Result</th>
         </tr>
+
+
         </thead>
         <tbody>
-        {% for investment in investments %}
-            <tr>
-                {% with R=investment.recent_value|sub:investment.acquired_value%}
-                    <td> {{ R}}</td>
-                {% endwith %}
+            <td>{{ sum_acquired_value.acquired_value__sum }}</td>
+            <td>{{ sum_recent_value.recent_value__sum }}</td>
 
 
 
-            </tr>
 
-
-        {% endfor %}
         </tbody>
     </table>
 

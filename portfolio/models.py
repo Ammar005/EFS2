@@ -52,6 +52,9 @@ class Investment(models.Model):
     def results_by_investment(self):
         return self.recent_value - self.acquired_value
 
+
+
+
 class Stock(models.Model):
     customer = models.ForeignKey(Customer, related_name='stocks')
     symbol = models.CharField(max_length=10)
@@ -70,6 +73,9 @@ class Stock(models.Model):
     def initial_stock_value(self):
         return self.shares * self.purchase_price
 
+    def initial_stock_price(self):
+        return self.purchase_price
+
     def current_stock_price(self):
         symbol_f = self.symbol
         data = Share(symbol_f)
@@ -81,3 +87,5 @@ class Stock(models.Model):
         data = Share(symbol_f)
         share_value = (data.get_open())
         return float(share_value) * float(self.shares)
+
+

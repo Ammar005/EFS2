@@ -158,8 +158,6 @@ def investment_delete(request, pk):
 
 
 
-
-
 @login_required
 def portfolio(request,pk):
 
@@ -174,6 +172,8 @@ def portfolio(request,pk):
                                                        'stocks': stocks,
                                                        'sum_recent_value': sum_recent_value,
                                                        'sum_acquired_value': sum_acquired_value,})
+
+
 
 
 
