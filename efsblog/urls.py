@@ -1,10 +1,11 @@
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.contrib.auth import views
-
 from django.contrib.auth.views import (
     password_reset, password_reset_done, password_reset_confirm, password_reset_complete
 )
+from django.contrib.auth import views
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('portfolio.urls', namespace='portfolio')),
