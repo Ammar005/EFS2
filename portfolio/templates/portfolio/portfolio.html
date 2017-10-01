@@ -9,16 +9,16 @@
 <head>
     <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
     <meta charset="UTF-8">
-    <title>Eagle Financial Services</title>
+    <title>Steam Financial.co</title>
 </head>
 <body>
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-primary">
-                <div class="panel-heading">Greattings Sir!</div>
+                <div class="panel-heading">Greattings !</div>
                 <div class="panel-body" >
-                    Steam Financial.co, Hope youa are ingoying our steamy protofolio design .
+                    Steam Financial.co, Hope you are enjoying our steamy protofolio design .
                 </div>
             </div>
         </div>
@@ -133,7 +133,7 @@
         <tbody>
             <td>{{ sum_acquired_value.acquired_value__sum }}</td>
             <td>{{ sum_recent_value.recent_value__sum }}</td>
-            <td>{{ sum_recent_value.recent_value__sum  }}</td>
+            <td>{{ sum_recent_value.recent_value__sum|sub:sum_acquired_value.acquired_value__sum  }}</td>
 
 
 
