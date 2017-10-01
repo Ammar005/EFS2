@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'mathfilters',
-    'portfolio'
+    'portfolio',
 ]
 
 MIDDLEWARE = [
@@ -160,10 +160,14 @@ except ImportError:
     pass
 
 
+from django.core.mail import send_mail
 
 
-
-
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'steam.custmer.care@gmail.com'
+EMAIL_HOST_PASSWORD = 'moondragon'
+EMAIL_PORT = 587
 
 
 
