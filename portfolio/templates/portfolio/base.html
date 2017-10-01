@@ -63,7 +63,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="/">
-                Eagle Financial Services
+                Steam Financial.co
             </a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
@@ -85,6 +85,8 @@
                     </li>
                 {% else %}
                     <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="{% url 'reset_password' %}"><span class="glyphicon glyphicon-log-in"></span>
+                        Reset password</a></li>
                 {% endif %}
             </ul>
         </div>

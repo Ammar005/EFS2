@@ -2,6 +2,10 @@ from django import forms
 from .models import Customer, Investment, Stock
 
 
+from django.contrib.auth.forms import UserCreationForm
+
+
+
 class CustomerForm(forms.ModelForm):
     class Meta:
         model = Customer
@@ -20,3 +24,4 @@ class StockForm(forms.ModelForm):
     class Meta:
         model = Stock
         fields = ('customer', 'symbol', 'name', 'shares', 'purchase_price', 'purchase_date',)
+
