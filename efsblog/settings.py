@@ -162,7 +162,7 @@ except ImportError:
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'steam.custmer.care@gmail.com'
-EMAIL_HOST_PASSWORD = 'moondragon'
+EMAIL_HOST_PASSWORD = 'Moondragon005@'
 EMAIL_PORT = 587
 
 

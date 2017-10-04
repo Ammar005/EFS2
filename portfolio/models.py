@@ -38,6 +38,7 @@ class Investment(models.Model):
     recent_value = models.DecimalField(max_digits=10, decimal_places=2)
     recent_date = models.DateField(default=timezone.now, blank=True, null=True)
 
+
     def created(self):
         self.acquired_date = timezone.now()
         self.save()
